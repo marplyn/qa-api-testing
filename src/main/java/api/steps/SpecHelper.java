@@ -8,7 +8,6 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
 public class SpecHelper {
-
     public static RequestSpecification getRequestSpec() {
         return new RequestSpecBuilder()
                 .setPort(8080)

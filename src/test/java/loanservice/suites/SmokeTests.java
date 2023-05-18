@@ -1,9 +1,9 @@
 package loanservice.suites;
 
-import loanservice.CreateOrderTest;
-import loanservice.DeleteOrderTest;
-import loanservice.GetStatusOrderTest;
-import loanservice.GetTariffsTest;
+import loanservice.positive.CreateOrderTest;
+import loanservice.positive.DeleteOrderTest;
+import loanservice.positive.GetStatusOrderTest;
+import loanservice.positive.GetTariffsTest;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 

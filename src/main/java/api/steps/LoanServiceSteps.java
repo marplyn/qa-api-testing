@@ -5,12 +5,10 @@ import api.enums.OrderStatus;
 import api.models.CreateOrderRequest;
 import api.models.DeleteOrderRequest;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
 
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class LoanServiceSteps {
@@ -37,7 +35,7 @@ public class LoanServiceSteps {
     }
 
     public void getTariffsShouldBeSuccessful() {
-        response.then().assertThat().body("data.tariffs", notNullValue());
+        response.then().assertThat().body("data.tariffs[0]", notNullValue());
     }
 
     // POST CreateOrder
@@ -59,7 +57,11 @@ public class LoanServiceSteps {
         response.then().assertThat().body("data.orderId", notNullValue());
     }
 
-    public void postCreateOrderShouldBeFailed() {
+    public String orderIdFromResponse() {
+        return response.path("data.orderId");
+    }
+
+    public void postCreateOrderShouldHaveError() {
         response.then().assertThat().body("error.code", anyOf(
                 is(ErrorCode.TARIFF_NOT_FOUND.toString()),
                 is(ErrorCode.TRY_LATER.toString()),
@@ -89,7 +91,8 @@ public class LoanServiceSteps {
     }
 
     public void getStatusOrderShouldBeFailed() {
-        response.then().assertThat().body("error.code", is(ErrorCode.ORDER_NOT_FOUND.toString()));
+        response.then().assertThat().body("error.code",
+                is(ErrorCode.ORDER_NOT_FOUND.toString()));
     }
 
     // DELETE Order

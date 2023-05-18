@@ -1,4 +1,4 @@
-package loanservice;
+package loanservice.negative;
 
 import api.models.CreateOrderRequest;
 import api.steps.LoanServiceSteps;
@@ -9,11 +9,11 @@ public class CreateOrderNegativeTest {
 
     @Test
     void postCreateOrderNegative() {
-        Long userId = 420356794755L;
+        Long userId = 420356955L;
         Integer tariffId = 25;
         CreateOrderRequest createOrderRequest = new CreateOrderRequest(userId, tariffId);
         loanServiceSteps.postCreateOrder(createOrderRequest)
                 .responseStatusShouldBeEqualTo(400)
-                .postCreateOrderShouldBeFailed();
+                .postCreateOrderShouldHaveError();
     }
 }

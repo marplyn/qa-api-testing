@@ -1,4 +1,4 @@
-package loanservice;
+package loanservice.positive;
 
 import api.steps.LoanServiceSteps;
 import org.junit.jupiter.api.Test;
