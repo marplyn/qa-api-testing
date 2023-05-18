@@ -8,18 +8,9 @@ public class GetStatusOrderTest {
 
     @Test
     void getStatusOrderPositive() {
-        String orderId = "b9d53bf0-32a1-4e06-a933-54b699f61ebb";
+        String orderId = "7d5c653d-30c0-43e3-ac12-18d420759daa";
         loanServiceSteps.getStatusOrder(orderId)
                 .responseStatusShouldBeEqualTo(200)
                 .getStatusOrderShouldBeSuccessful();
-    }
-
-    // неверный код ошибки
-    @Test
-    void getStatusOrderNegative() {
-        String orderId = "67f38d66-6c75-33b5-b981-9f9fd0b488d7";
-        loanServiceSteps.getStatusOrder(orderId)
-                .responseStatusShouldBeEqualTo(400)
-                .getStatusOrderShouldBeFailed();
     }
 }

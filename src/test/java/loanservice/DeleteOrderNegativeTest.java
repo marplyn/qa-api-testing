@@ -3,20 +3,9 @@ package loanservice;
 import api.models.DeleteOrderRequest;
 import api.steps.LoanServiceSteps;
 import org.junit.jupiter.api.Test;
-import java.lang.Long;
 
-
-public class DeleteOrderTest {
+public class DeleteOrderNegativeTest {
     private final LoanServiceSteps loanServiceSteps = new LoanServiceSteps();
-
-    @Test
-    void postCreateOrderPositive() {
-        Long userId = 120356897L;
-        String orderId = "7d5c653d-30c0-43e3-ac12-18d420759daa";
-        DeleteOrderRequest deleteOrderRequest = new DeleteOrderRequest(userId, orderId);
-        loanServiceSteps.deleteOrder(deleteOrderRequest)
-                .responseStatusShouldBeEqualTo(200);
-    }
 
     @Test
     void postCreateOrderNegative() {
