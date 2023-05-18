@@ -15,7 +15,7 @@ public class CreateOrderTest {
             "4653785, 3",
             "120356894755, 1"
     })
-    void postCreateOrderPositive(Long userId, Integer tariffId) {
+    void postCreateOrderTest(Long userId, Integer tariffId) {
         CreateOrderRequest createOrderRequest = new CreateOrderRequest(userId, tariffId);
         loanServiceSteps.postCreateOrder(createOrderRequest)
                 .responseStatusShouldBeEqualTo(200)

@@ -14,10 +14,10 @@ public class DeleteOrderTest {
 
     @ParameterizedTest
     @CsvSource({
-            "525489, 720a4b3f-e8d6-4896-b854-4aa5c1946756",
-            "233568957, 399926c1-09e9-492b-ab3d-48e39ff6a5a4"
+            "453156, 6be658df-8dc9-4846-85f0-bc72d1c13105",
+            "90653785, f5ca3f42-0f57-4552-aa40-b6a314d47943"
     })
-    void postCreateOrderPositive(Long userId, String orderId) {
+    void deleteOrderTest(Long userId, String orderId) {
         DeleteOrderRequest deleteOrderRequest = new DeleteOrderRequest(userId, orderId);
         loanServiceSteps.deleteOrder(deleteOrderRequest)
                 .responseStatusShouldBeEqualTo(200);

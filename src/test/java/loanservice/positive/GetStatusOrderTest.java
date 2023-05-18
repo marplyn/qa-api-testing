@@ -8,7 +8,7 @@ public class GetStatusOrderTest {
     private final LoanServiceSteps loanServiceSteps = new LoanServiceSteps();
 
     @ParameterizedTest
-    @ValueSource(strings = {"399926c1-09e9-492b-ab3d-48e39ff6a5a4", "f4fa0932-3a29-4b1e-885e-11546cb51704"})
+    @ValueSource(strings = {"ace41169-c147-4be4-8492-518125aa1c0a", "f5ca3f42-0f57-4552-aa40-b6a314d47943"})
     void getStatusOrderPositive(String orderId) {
         loanServiceSteps.getStatusOrder(orderId)
                 .responseStatusShouldBeEqualTo(200)
